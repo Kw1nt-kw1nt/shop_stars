@@ -3,15 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Ключевые SEO-настройки для поиска -->
-    <title>Telegram Stars & Blockpost Shop | Магазин от Qw1nt (Квинт Старс)</title>
-    <meta name="description" content="Официальный магазин Telegram Stars и игровой валюты Blockpost от Qw1nt. Дешевые звезды для Телеграм (Stars Shop) и золото Блокпост с моментальной доставкой.">
-    <meta name="keywords" content="квинт старс, qw1nt stars, шоп старс квинт, shop stars, купить звезды телеграм, blockpost золото, блокпост квинт, telegram stars shop">
-    
-    <!-- Метатег подтверждения Google (чтобы верификация не слетела) -->
-    <meta name="google-site-verification" content="google9c5425c276326bb7" />
-
+    <title>Telegram Stars & Premium Shop</title>
     <style>
         :root {
             --bg-color: #0b0c10;
@@ -20,7 +12,6 @@
             --text-muted: #95a5a6;
             --neon-blue: #00ffcc;
             --neon-purple: #9b5de5;
-            --neon-gold: #ffb703;
             --neon-discount: #ff007f;
             --tg-color: #2481cc;
             --white: #ffffff;
@@ -57,7 +48,7 @@
             padding: 60px 20px;
             background: linear-gradient(180deg, rgba(31,40,51,0.5) 0%, rgba(11,12,16,0) 100%);
             border-radius: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             border: 1px solid rgba(0, 255, 204, 0.1);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
@@ -83,75 +74,19 @@
             line-height: 1.6;
         }
 
-        /* Стиль переключателя вкладок */
-        .tabs-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .tab-btn {
-            padding: 14px 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background-color: var(--card-bg);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-muted);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .tab-btn:hover {
-            color: var(--white);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .tab-btn.active[data-tab="stars"] {
-            color: var(--bg-color);
-            background-color: var(--neon-blue);
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
-        }
-
-        .tab-btn.active[data-tab="blockpost"] {
-            color: var(--bg-color);
-            background-color: var(--neon-gold);
-            border-color: var(--neon-gold);
-            box-shadow: 0 0 20px rgba(255, 183, 3, 0.4);
-        }
-
-        /* Логика отображения контента вкладок */
-        .tab-content {
-            display: none;
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .tab-content.active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         .section-title {
             font-size: 1.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin: 20px 0 25px 0;
+            margin: 40px 0 20px 0;
             padding-left: 15px;
             border-left: 4px solid var(--neon-blue);
             text-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
         }
 
-        .tab-content[id="blockpost"] .section-title {
-            border-left-color: var(--neon-gold);
-            text-shadow: 0 0 10px rgba(255, 183, 3, 0.2);
+        .section-title.premium {
+            border-left-color: var(--neon-purple);
+            text-shadow: 0 0 10px rgba(155, 93, 229, 0.2);
         }
 
         .catalog-grid {
@@ -180,10 +115,9 @@
             box-shadow: 0 12px 30px rgba(0, 255, 204, 0.25);
         }
 
-        /* Стили карточек Blockpost при наведении */
-        .blockpost-card:hover {
-            border-color: var(--neon-gold);
-            box-shadow: 0 12px 30px rgba(255, 183, 3, 0.25);
+        .card.premium-card:hover {
+            border-color: var(--neon-purple);
+            box-shadow: 0 12px 30px rgba(155, 93, 229, 0.25);
         }
 
         .badge {
@@ -222,8 +156,8 @@
             margin-bottom: 20px;
         }
 
-        .blockpost-card .card-price {
-            color: var(--neon-gold);
+        .premium-card .card-price {
+            color: var(--neon-purple);
         }
 
         .btn-buy {
@@ -250,14 +184,14 @@
             box-shadow: 0 0 15px var(--neon-blue);
         }
 
-        .blockpost-card .btn-buy {
-            border-color: var(--neon-gold);
+        .premium-card .btn-buy {
+            border-color: var(--neon-purple);
         }
 
-        .blockpost-card .btn-buy:hover {
-            background: var(--neon-gold);
-            color: var(--bg-color);
-            box-shadow: 0 0 15px var(--neon-gold);
+        .premium-card .btn-buy:hover {
+            background: var(--neon-purple);
+            color: var(--white);
+            box-shadow: 0 0 15px var(--neon-purple);
         }
 
         footer {
@@ -309,8 +243,7 @@
 
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
-            .tabs-container { flex-direction: column; gap: 10px; }
-            .tab-btn { width: 100%; text-align: center; }
+            .catalog-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -318,31 +251,129 @@
 
     <div class="container">
         <header>
-            <h1>Магазин <span>Qw1nt Shop</span></h1>
+            <h1>Магазин <span>Telegram Stars</span></h1>
             <p class="info-text">
-                Официальный маркетплейс цифровых ценностей от Qw1nt. Выберите интересующую вас категорию товара, заказывайте валюту по самым низким ценам и получайте моментальную доставку прямо на ваш аккаунт! Разработано kw1nt-kw1nt.
+                Telegram Stars (Звезды) — это официальная цифровая валюта внутри мессенджера Telegram. Используйте её для поддержки любимых авторов каналов, покупки уникального контента, оплаты услуг в мини-приложениях, ботах и запуска трендовых Web3 игр!
             </p>
         </header>
 
-        <div class="tabs-container">
-            <button class="tab-btn active" data-tab="stars">Telegram Stars</button>
-            <button class="tab-btn" data-tab="blockpost">Blockpost</button>
-        </div>
+        <div class="section-title">Telegram Stars & Подарки</div>
+        <div class="catalog-grid">
+            
+            <div class="card">
+                <span class="card-icon">🎁</span>
+                <div class="card-title">1 Подарок на выбор<br><small style="font-size:0.85rem; color:var(--text-muted);">(Мишка или Сердечко)</small></div>
+                <div class="card-price">15 ★ = 35₽</div>
+                <a href="https://t.me/Charizarde" target="_blank" class="btn-buy">Купить</a>
+            </div>
 
-        <div id="stars" class="tab-content active">
-            <div class="section-title">Telegram Stars & Подарки</div>
-            <div class="catalog-grid">
-                
-                <div class="card">
-                    <span class="card-icon">🎁</span>
-                    <div class="card-title">1 Подарок на выбор<br><small style="font-size:0.85rem; color:var(--text-muted);">(Мишка или Сердечко)</small></div>
-                    <div class="card-price">15 ★ = 35₽</div>
-                    <a href="https://t.me" target="_blank" class="btn-buy">Купить</a>
-                </div>
+            <div class="card">
+                <span class="badge">-10% 1-му</span>
+                <span class="card-icon">⭐</span>
+                <div class="card-title">50 Звезд</div>
+                <div class="card-price">80₽</div>
+                <a href="https://t.me/Charizarde" target="_blank" class="btn-buy">Купить</a>
+            </div>
 
+            <div class="card">
+                <span class="badge">-10% 1-му</span>
+                <span class="card-icon">🌟</span>
+                <div class="card-title">100 Звезд</div>
+                <div class="card-price">145₽</div>
+                <a href="https://t.me/Charizarde" target="_blank" class="btn-buy">Купить</a>
+            </div>
+
+            <div class="card">
+                <span class="badge">-10% 1-му</span>
+                <span class="card-icon">✨</span>
+                <div class="card-title">150 Звезд</div>
+                <div class="card-price">185₽</div>
+                <a href="https://t.me/Charizarde" target="_blank" class="btn-buy">Купить</a>
+            </div>
+
+            <div class="card">
+                <span class="badge">-10% 1-му</span>
+                <span class="card-icon">💫</span>
+                <div class="card-title">200 Звезд</div>
+                <div class="card-price">230₽</div>
+                <a href="https://t.me/Charizarde" target="_blank" class="btn-buy">Купить</a>
+            </div>
+
+            <div class="card">
+                <span class="badge">-10% 1-му</span>
+                <span class="card-icon">🔮</span>
+                <div class="card-title">500 Звезд</div>
+                <div class="card-price">675₽</div>
+                <a href="https://t.me/Charizarde" target="_blank" class="btn-buy">Купить</a>
+                  </div>
+          <div class="card">
+                <span class="badge">-10% 1-му</span>
+                <span class="card-icon">👑</span>
+                <div class="card-title">1000 Звезд</div>
+                <div class="card-price">1100₽</div>
+                <a href="https://t.me/Charizarde" target="_blank" class="btn-buy">Купить</a>
             </div>
         </div>
 
+        <div class="section-title premium">Telegram Premium</div>
+        <div class="catalog-grid">
+            
+            <div class="card premium-card">
+                <span class="badge">-5% 1-му</span>
+                <span class="card-icon">💎</span>
+                <div class="card-title">Premium на 3 мес.</div>
+                <div class="card-price">649₽</div>
+                <a href="https://t.me/Charizarde" target="_blank" class="btn-buy">Купить</a>
+            </div>
+
+            <div class="card premium-card">
+                <span class="badge">-5% 1-му</span>
+                <span class="card-icon">⚡</span>
+                <div class="card-title">Premium на 6 мес.</div>
+                <div class="card-price">1299₽</div>
+                <a href="https://t.me/Charizarde" target="_blank" class="btn-buy">Купить</a>
+            </div>
+
+            <div class="card premium-card">
+                <span class="badge">-5% 1-му</span>
+                <span class="card-icon">🔥</span>
+                <div class="card-title">Premium на 9 мес.</div>
+                <div class="card-price">2499₽</div>
+                <a href="https://t.me/Charizarde" target="_blank" class="btn-buy">Купить</a>
+            </div>
+        </div>
+
+        <div class="section-title">NFT Подарки</div>
+        <div class="catalog-grid">
+            
+            <div class="card" style="grid-column: 1 / -1; max-width: 500px; margin: 0 auto; width: 100%;">
+                <span class="badge">-10% 1-му</span>
+                <span class="card-icon">🖼️</span>
+                <div class="card-title">Любой NFT подарок на выбор</div>
+                <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 0.9rem;">
+                    Стоимость рассчитывается индивидуально и зависит от выбранного вами коллекционного подарка. При первой покупке вы получаете скидку 10%!
+                </p>
+                <div class="card-price" style="font-size: 1.3rem;">Цена договорная</div>
+                <a href="https://t.me/Charizarde" target="_blank" class="btn-buy">Узнать цену</a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-credits">
+            
+                
+            </div>
+            <a href="https://tg.me" target="_blank" class="btn-tg-footer">
+                <svg class="tg-icon" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.62.15-.15 2.7-2.46 2.75-2.68.01-.03.01-.14-.06-.2-.07-.06-.17-.04-.25-.02-.11.02-1.83 1.16-5.16 3.41-.49.33-.93.5-1.33.49-.44-.01-1.29-.25-1.92-.45-.77-.25-1.39-.39-1.34-.83.03-.23.35-.46.97-.71 3.8-1.65 6.34-2.74 7.61-3.26 3.62-1.48 4.37-1.74 4.86-1.75.11 0 .35.03.5.15.13.1.17.24.18.34-.01.07 0 .21-.02.3z"/>
+                </svg>
+                Связаться в Telegram
+            </a>
+        </footer>
+    </div>
+
+</body>
+</html>
         <div id="blockpost" class="tab-content">
             <div class="section-title">Золото Blockpost</div>
             <div class="catalog-grid">
